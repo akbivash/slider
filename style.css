@@ -1,0 +1,98 @@
+:root{
+	--btn-padding:2rem;
+}
+*{
+	box-sizing: border-box;
+}
+body {
+  color: #333;
+  text-align: center;
+  margin: 0;
+}
+
+ul {
+	padding: 0;
+}
+
+li {
+	list-style: none;
+}
+
+
+main {
+	position: relative;
+	max-width: 1200px;
+	margin: 0 auto;
+display: flex;
+align-items: center;
+}
+
+.wrapper {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	max-width: 1200px;
+	width: calc(100% - 2 * var(--btn-padding));
+}
+
+
+
+.items{
+	box-sizing: border-box;
+	--item-per-screen:1;
+	max-width: 1200px;
+	display: flex;
+height: 300px;
+
+	gap: .2rem;
+	width: 100%;
+
+	transition: .4s;
+	align-items: center;
+}
+
+.item {
+	/* height: 300px; */
+height: 100%;
+	user-select: none;
+flex: 0 0 calc(100% / var(--item-per-screen));
+	background: tomato;
+	font-size: 3rem;
+
+}
+.progress_bar{
+	
+	display: flex;
+	gap: .2rem;
+}
+.progress_bar .progress_bar_item{
+	width: 2rem;
+	height: 1rem;
+	background: rgb(185, 181, 181);
+	cursor: pointer;
+}
+.progress_bar_item.active{
+	background: rgb(80, 79, 79);
+}
+@media screen and (min-width: 500px) {
+
+	.item {
+		--item-per-screen:2;
+	}
+}
+
+@media screen and (min-width: 800px) {
+
+
+	.item {
+	--item-per-screen:3;
+	}
+}
+
+.left, .right{
+	cursor: pointer;
+	background: rgb(223, 140, 140);
+	height: 100%;
+	width: var(--btn-padding);
+	padding: 4px 0;
+}
