@@ -1,8 +1,8 @@
-:root{
-	--btn-padding:3rem;
+:root {
+  --btn-padding: 3rem;
 }
-*{
-	box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 body {
   color: #333;
@@ -11,95 +11,85 @@ body {
 }
 
 ul {
-	padding: 0;
+  padding: 0;
 }
 
 li {
-	list-style: none;
+  list-style: none;
 }
 
-
 main {
-	position: relative;
-	max-width: 1200px;
-	margin: 0 auto;
-	margin-top: 4rem;
-display: flex;
-align-items: center;
-
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
 }
 
 .wrapper {
-	position: relative;
-	overflow: hidden;
-	width: 100%;
-	max-width: 1200px;
-	width: calc(100% - 2 * var(--btn-padding));
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1200px;
+  width: calc(100% - 2 * var(--btn-padding));
 }
 
+.items {
+  box-sizing: border-box;
+  --item-per-screen: 1;
+  max-width: 1200px;
+  display: flex;
+  height: 300px;
 
-
-.items{
-	box-sizing: border-box;
-	--item-per-screen:1;
-	max-width: 1200px;
-	display: flex;
-height: 300px;
-
-	/* gap: .2rem; */
-	width: 100%;
-
-	transition: .4s;
-	align-items: center;
+  width: 100%;
+  transition: 0.7s;
+  align-items: center;
 }
 
 .items img {
-	/* height: 300px; */
-height: 100%;
-	user-select: none;
-flex: 0 0 calc(100% / var(--item-per-screen));
-	font-size: 3rem;
-	max-width: calc(100% / var(--item-per-screen));
-	object-fit: cover;
-padding: .2rem;
+  height: 100%;
+  user-select: none;
+  flex: 0 0 calc(100% / var(--item-per-screen));
+  font-size: 3rem;
+  max-width: calc(100% / var(--item-per-screen));
+  object-fit: cover;
+  padding: 0.2rem;
 }
-.progress_bar{
-	
-	display: flex;
-	gap: .2rem;
-	justify-content: center;
+.progress_bar {
+  display: flex;
+  gap: 0.2rem;
+  justify-content: center;
 }
-.progress_bar .progress_bar_item{
-	width: 2rem;
-	height: 1rem;
-	background: rgb(185, 181, 181);
-	cursor: pointer;
+.progress_bar .progress_bar_item {
+  width: 2rem;
+  height: 1rem;
+  background: rgb(185, 181, 181);
+  cursor: pointer;
 }
-.progress_bar_item.active{
-	background: rgb(80, 79, 79);
+.progress_bar_item.active {
+  background: rgb(80, 79, 79);
 }
 @media screen and (min-width: 500px) {
-
-	.items img {
-		--item-per-screen:2;
-	}
+  .items img {
+    --item-per-screen: 2;
+  }
 }
 
 @media screen and (min-width: 800px) {
-
-
-	.items img {
-	--item-per-screen:3;
-	}
+  .items img {
+    --item-per-screen: 3;
+  }
 }
 
-.left, .right{
-	cursor: pointer;
-	background: rgba(0, 0, 0, 0.7);
-	color: #fff;
-	height: 4rem;
-	line-height: 4rem;
-	font-size: 2rem;
-	width: var(--btn-padding);
-	/* padding: 4px 0; */
+.left,
+.right {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  height: 4rem;
+  line-height: 4rem;
+  font-size: 2rem;
+  width: var(--btn-padding);
+  /* padding: 4px 0; */
 }

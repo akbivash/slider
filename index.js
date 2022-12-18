@@ -10,7 +10,26 @@ let index = 0;
 document.querySelector(".left").addEventListener("click", handleLeft);
 document.querySelector(".right").addEventListener("click", handleRight);
 window.addEventListener("resize", calculateProgressBar);
-window.addEventListener('DOMContentLoaded', calculateProgressBar())
+window.addEventListener('DOMContentLoaded', () => {
+  calculateProgressBar()
+
+  setInterval(() => {
+    let itemPerScreen = parseInt(
+      getComputedStyle(item).getPropertyValue("--item-per-screen")
+    );
+    let progressBarItemCount = Math.ceil(itemCount / itemPerScreen);
+  
+    if (index + 1 >= progressBarItemCount) {
+      index = 0;
+      items.style.transform = `translateX(-${index * 100}%)`;
+    } else {
+      index++;
+      items.style.transform = `translateX(-${index * 100}%)`;
+    }
+   
+    calculateProgressBar()
+  },5000)
+})
 
 
 function handleLeft() {
